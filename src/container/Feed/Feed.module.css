@@ -1,0 +1,10 @@
+.feet__header {
+  padding: 9px;
+  font-size: 20px;
+  position: sticky;
+  top: 0;
+  color: black;
+  z-index: 9;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}

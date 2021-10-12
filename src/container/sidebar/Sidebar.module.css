@@ -1,0 +1,24 @@
+:root {
+  --color: #1d9bf0;
+}
+.twitter_logo {
+  color: var(--color);
+  margin-left: 15px;
+}
+.tweet__btn {
+  width: 100%;
+  padding: 15px 20px;
+  text-align: center;
+  background-color: var(--color);
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border-radius: 30px;
+  transition: background 0.2s;
+  margin-top: 20px;
+}
+.tweet__btn:hover {
+  cursor: pointer;
+  background-color: #2a8bcc;
+}

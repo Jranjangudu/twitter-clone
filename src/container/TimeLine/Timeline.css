@@ -1,0 +1,15 @@
+.search__people > input {
+  width: 98%;
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #eff3f4;
+}
+.search__header {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 800;
+}
