@@ -33,6 +33,7 @@ const TweetBox = () => {
             onChange={(e) => setTweetMessage(e.target.value)}
             value={tweetMessage}
             placeholder="What's happening?"
+            className="tweetMessage"
             type="text"
             required
           />
@@ -41,6 +42,7 @@ const TweetBox = () => {
           value={tweetImage}
           onChange={(e) => setTweetImage(e.target.value)}
           placeholder="Optional: Enter image URL"
+          className="tweetImage"
           type="URL"
         />
 

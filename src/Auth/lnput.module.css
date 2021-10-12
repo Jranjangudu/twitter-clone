@@ -1,0 +1,95 @@
+.login__container {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.login__container .login__wrapper {
+  width: 300px;
+  -webkit-box-shadow: 3px 3px 2px #ecebe8, 3px 3px 2px #adadab;
+          box-shadow: 3px 3px 2px #ecebe8, 3px 3px 2px #adadab;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.login__container .login__wrapper .twitter_logo {
+  font-size: 60px;
+  color: #1d9bf0;
+}
+
+.login__container .login__wrapper .login_heading {
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.login__container .login__wrapper > h4 {
+  font-size: 20px;
+  padding: 10px 0 15px 0;
+}
+
+.login__container .login__wrapper .login__button {
+  width: 150px;
+  height: 40px;
+  background-color: #1d9bf0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  border: 2px solid #97e7dc;
+  border-radius: 40px;
+  cursor: pointer;
+  -webkit-transform: all 1s;
+          transform: all 1s;
+  margin: 20px 0;
+}
+
+.login__container .login__wrapper .login__button:hover {
+  background-color: #3499dd;
+}
+
+.login__container .login__wrapper .form__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login__container .login__wrapper .form__wrapper .email__field {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: #eff3f4;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+}
+
+.login__container .login__wrapper .form__wrapper .password__field {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: #eff3f4;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+}
+
+.login__container .login__wrapper .form__wrapper .name__field {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  background-color: #eff3f4;
+  border: none;
+  outline: none;
+}
+
+.login__container .login__wrapper .form__wrapper .signup__link {
+  color: #1d9bf0;
+  text-decoration: none;
+}
+/*# sourceMappingURL=lnput.module.css.map */

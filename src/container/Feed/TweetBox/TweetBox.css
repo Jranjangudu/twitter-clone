@@ -11,7 +11,7 @@
   display: flex;
   padding: 10px;
 }
-input[type="text"] {
+.tweetMessage {
   flex: 1;
   margin-left: 10px;
   margin-right: 10px;
@@ -20,7 +20,7 @@ input[type="text"] {
   outline: none;
   font-size: 20px;
 }
-input[type="URL"] {
+.tweetImage {
   flex: 1;
   margin-left: 10px;
   margin-right: 10px;

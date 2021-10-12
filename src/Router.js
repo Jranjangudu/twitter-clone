@@ -10,14 +10,22 @@ const LoginPageComponent = withPageTitle({
   component: Login,
   title: "Login -  twitter clone",
 });
+const ResistorPageComponent = withPageTitle({
+  component: Resistor,
+  title: "Resistor -  twitter clone",
+});
+const LandingPageComponent = withPageTitle({
+  component: LandingPage,
+  title: "Home -  twitter clone",
+});
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={LandingPage} />
+        <Route path="/" exact component={LandingPageComponent} />
         <Route path="/login" exact component={LoginPageComponent} />
-        <Route path="/signup" exact component={Resistor} />
+        <Route path="/signup" exact component={ResistorPageComponent} />
       </Switch>
     </BrowserRouter>
   );
