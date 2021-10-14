@@ -20,10 +20,17 @@ const LandingPageComponent = withPageTitle({
 });
 
 const Router = () => {
+  let token = window.localStorage.getItem("authorization");
+  console.log(token);
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={LandingPageComponent} />
+        {token === "false" ? (
+          <Route path="/" exact component={LoginPageComponent} />
+        ) : (
+          <Route path="/" exact component={LandingPageComponent} />
+        )}
+
         <Route path="/login" exact component={LoginPageComponent} />
         <Route path="/signup" exact component={ResistorPageComponent} />
       </Switch>

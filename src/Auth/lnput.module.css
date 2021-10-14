@@ -29,6 +29,22 @@
   padding: 10px 0 15px 0;
 }
 
+.login__container .login__wrapper .success__message {
+  text-align: center;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login__container .login__wrapper .error__message {
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+}
+
 .login__container .login__wrapper .login__button {
   width: 150px;
   height: 40px;

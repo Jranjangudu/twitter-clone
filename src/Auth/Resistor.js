@@ -3,15 +3,19 @@ import { Link } from "react-router-dom";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import css from "./lnput.module.css";
 import InputField from "../components/form/InputField";
+import axios from "axios";
 const Resistor = () => {
   const [values, setValue] = useState({});
+  const [resistorMessage, setResistorMessage] = useState("");
+  const [ErrorMessage, setErrorMessage] = useState("");
   const loginField = [
     {
       type: "text",
       class: `${css.name__field}`,
       name: "username",
       placeholder: "UserName",
-      required: true,
+      required: false,
+      id: "username",
     },
     {
       type: "email",
@@ -19,6 +23,7 @@ const Resistor = () => {
       name: "email",
       placeholder: "Enter your email",
       required: true,
+      id: "email",
     },
     {
       type: "password",
@@ -26,6 +31,7 @@ const Resistor = () => {
       name: "password",
       placeholder: "Enter your password",
       required: true,
+      id: "password",
     },
   ];
   const handlechange = (input) => (event) => {
@@ -34,17 +40,44 @@ const Resistor = () => {
     }
     setValue({ ...values, [input]: event.target.value });
   };
-  const handleResistor = (e) => {
+  const handleResistor = async (e) => {
     e.preventDefault();
-    console.log(values);
+    try {
+      const res = await axios.post("http://localhost:5000/api/register", {
+        userName: values.username,
+        email: values.email,
+        password: values.password,
+      });
+      setResistorMessage(res.data.message);
+      setTimeout(() => {
+        setResistorMessage("");
+      }, 2000);
+      setValue({
+        username: "",
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      error.response.data.message &&
+        setErrorMessage(error.response.data.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 2000);
+    }
   };
 
   return (
     <div className={css.login__container}>
       <div className={css.login__wrapper}>
         <TwitterIcon className={css.twitter_logo} />
+        {resistorMessage ? (
+          <p className={css.success__message}>{resistorMessage}</p>
+        ) : (
+          ErrorMessage && <p className={css.error__message}>{ErrorMessage}</p>
+        )}
         <h2 className={css.login_heading}>Happening now</h2>
         <h4>Join Twitter today.</h4>
+
         <div className={css.form__wrapper}>
           <form onSubmit={handleResistor}>
             {loginField.map((eachField, idx) => {
@@ -52,6 +85,10 @@ const Resistor = () => {
                 <InputField
                   eachField={eachField}
                   keys={idx}
+                  value={values}
+                  emailValue={values.email}
+                  passwordValue={values.password}
+                  usernameValue={values.username}
                   handlechange={handlechange}
                 />
               );
