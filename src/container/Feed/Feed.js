@@ -11,10 +11,18 @@ const Feed = () => {
       setPosts(snapshot.docs.map((doc) => doc.data()));
     });
   }, []);
-
+  const handleLogout = () => {
+    localStorage.setItem("auth", "");
+    window.location.reload();
+  };
   return (
     <div className={css.feet__container}>
-      <h2 className={css.feet__header}>Home</h2>
+      <div className={css.feed__header}>
+        <h2 className={css.home}>Home</h2>
+        <h2 className={css.logout} onClick={handleLogout}>
+          Logout
+        </h2>
+      </div>
       <TweetBox />
       {posts &&
         posts.map((post, idx) => {

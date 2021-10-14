@@ -1,4 +1,10 @@
-.feet__header {
+.home {
+  padding: 5px;
+  font-size: 20px;
+}
+.feed__header {
+  display: flex;
+  justify-content: space-between;
   padding: 9px;
   font-size: 20px;
   position: sticky;
@@ -7,4 +13,16 @@
   z-index: 9;
   background-color: #fff;
   border-bottom: 1px solid rgb(233, 232, 232);
+}
+.logout {
+  background-color: #3999da;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+  transition: backgroung-color 0.5;
+}
+.logout:hover {
+  background-color: #3794d3;
+  cursor: pointer;
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import css from "./lnput.module.css";
 import InputField from "../components/form/InputField";
-import { useHistory } from "react-router-dom";
+
 import axios from "axios";
 const Login = () => {
   const history = useHistory();
@@ -38,7 +38,7 @@ const Login = () => {
         email: values.email,
         password: values.password,
       });
-      localStorage.setItem("authorization", res.data.token);
+      localStorage.setItem("auth", res.data.token);
       const storeData = {
         userID: res.data.userID,
         userName: res.data.userName,
@@ -46,7 +46,7 @@ const Login = () => {
       };
       localStorage.setItem("userdata", JSON.stringify(storeData));
       history.push("/");
-      console.log("login..................");
+      window.location.reload();
     } catch (error) {
       error.response.data.message &&
         setErrorMessage(error.response.data.message);

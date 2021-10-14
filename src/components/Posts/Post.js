@@ -33,7 +33,7 @@ const Post = ({ displayName, userName, text, image, avatar, verified }) => {
         </div>
 
         <div className="post__description">{text}</div>
-        <img src={image} alt="posts" className="post__image" />
+        {image && <img src={image} alt="posts" className="post__image" />}
         <div className="post__footer">
           <IconButton>
             {" "}

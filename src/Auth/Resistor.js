@@ -14,7 +14,7 @@ const Resistor = () => {
       class: `${css.name__field}`,
       name: "username",
       placeholder: "UserName",
-      required: false,
+      required: true,
       id: "username",
     },
     {

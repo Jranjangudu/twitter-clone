@@ -19,20 +19,18 @@ const LandingPageComponent = withPageTitle({
   title: "Home -  twitter clone",
 });
 
+const IsLoggedin = localStorage.getItem("auth");
+
 const Router = () => {
-  let token = window.localStorage.getItem("authorization");
-  console.log(token);
   return (
     <BrowserRouter>
       <Switch>
-        {token === "false" ? (
-          <Route path="/" exact component={LoginPageComponent} />
-        ) : (
-          <Route path="/" exact component={LandingPageComponent} />
-        )}
-
         <Route path="/login" exact component={LoginPageComponent} />
         <Route path="/signup" exact component={ResistorPageComponent} />
+        <Route
+          path="/"
+          render={() => (!IsLoggedin ? <Login /> : <LandingPageComponent />)}
+        />
       </Switch>
     </BrowserRouter>
   );
