@@ -38,11 +38,13 @@ const Login = () => {
         email: values.email,
         password: values.password,
       });
+
       localStorage.setItem("auth", res.data.token);
       const storeData = {
         userID: res.data.userID,
         userName: res.data.userName,
         token: res.data.token,
+        timestamp: res.data.timestamp,
       };
       localStorage.setItem("userdata", JSON.stringify(storeData));
       history.push("/");

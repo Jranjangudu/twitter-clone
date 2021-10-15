@@ -1,6 +1,9 @@
 :root {
   --color: #1d9bf0;
 }
+.border__right {
+  position: fixed;
+}
 .twitter_logo {
   color: var(--color);
   margin-left: 15px;

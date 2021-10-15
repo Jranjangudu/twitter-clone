@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import css from "./lnput.module.css";
 import InputField from "../components/form/InputField";
 import axios from "axios";
 const Resistor = () => {
+  const history = useHistory();
   const [values, setValue] = useState({});
   const [resistorMessage, setResistorMessage] = useState("");
   const [ErrorMessage, setErrorMessage] = useState("");
@@ -51,6 +52,7 @@ const Resistor = () => {
       setResistorMessage(res.data.message);
       setTimeout(() => {
         setResistorMessage("");
+        history.push("/login");
       }, 2000);
       setValue({
         username: "",

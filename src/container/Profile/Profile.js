@@ -24,7 +24,7 @@ const Profile = () => {
         </div>
         <div className="user__info">
           <h2 className="user__name">{UserData.userName}</h2>
-          <p className="join__date">Joined October 2021</p>
+          <p className="join__date">Joined {UserData.timestamp}</p>
         </div>
       </section>
     </div>

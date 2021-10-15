@@ -96,6 +96,7 @@ router.post("/login", async (req, res) => {
               token: token,
               userID: users[0]._id,
               userName: users[0].userName,
+              timestamp: new Date(users[0].createdAt).toLocaleString(),
             });
           }
 
