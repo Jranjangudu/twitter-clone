@@ -5,16 +5,18 @@ import "./TweetBox.css";
 const TweetBox = () => {
   const [tweetMessage, setTweetMessage] = useState("");
   const [tweetImage, setTweetImage] = useState("");
+  const UserData = JSON.parse(localStorage.getItem("userdata"));
+  const randomNumber = Math.floor(Math.random() * 90000) + 10000;
   const sendTweet = (e) => {
     e.preventDefault();
 
     db.collection("posts").add({
-      displayName: "react developer",
-      userName: "developer12",
+      displayName: UserData.userName,
+      userName: UserData.userName + randomNumber,
       text: tweetMessage,
       image: tweetImage,
-      avatar: "https://v4.mui.com/static/images/avatar/3.jpg",
-      verified: false,
+      avatar: `https://ui-avatars.com/api/?color=ff0000&name=${UserData.userName}`,
+      verified: true,
       timestamp: new Date(),
     });
 
@@ -27,7 +29,7 @@ const TweetBox = () => {
         <div className="tweetBox__inputs">
           <Avatar
             alt="avatar"
-            src="https://v4.mui.com/static/images/avatar/3.jpg"
+            src={`https://ui-avatars.com/api/?color=ff0000&name=${UserData.userName}`}
           />
           <input
             onChange={(e) => setTweetMessage(e.target.value)}

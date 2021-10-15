@@ -12,7 +12,7 @@ const Feed = () => {
     });
   }, []);
   const handleLogout = () => {
-    localStorage.setItem("auth", "");
+    localStorage.removeItem("auth");
     window.location.reload();
   };
   return (
@@ -24,7 +24,7 @@ const Feed = () => {
         </h2>
       </div>
       <TweetBox />
-      {posts &&
+      {posts ? (
         posts.map((post, idx) => {
           return (
             <div key={idx + 10}>
@@ -38,7 +38,10 @@ const Feed = () => {
               />
             </div>
           );
-        })}
+        })
+      ) : (
+        <p>Loading ....</p>
+      )}
     </div>
   );
 };

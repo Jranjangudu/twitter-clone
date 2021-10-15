@@ -27,8 +27,22 @@ const Router = () => {
       <Switch>
         <Route path="/login" exact component={LoginPageComponent} />
         <Route path="/signup" exact component={ResistorPageComponent} />
+
+        <Route path="/explore/:pathID" exact component={LandingPageComponent} />
+        <Route
+          path="/notifications/:pathID"
+          exact
+          component={LandingPageComponent}
+        />
+        <Route
+          path="/bookmarks/:pathID"
+          exact
+          component={LandingPageComponent}
+        />
+        <Route path="/profile/:pathID" exact component={LandingPageComponent} />
         <Route
           path="/"
+          exact
           render={() => (!IsLoggedin ? <Login /> : <LandingPageComponent />)}
         />
       </Switch>
