@@ -34,10 +34,13 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/login", {
-        email: values.email,
-        password: values.password,
-      });
+      const res = await axios.post(
+        "https://twitter-clone-apis.herokuapp.com/api/login",
+        {
+          email: values.email,
+          password: values.password,
+        }
+      );
 
       localStorage.setItem("auth", res.data.token);
       const storeData = {

@@ -44,11 +44,14 @@ const Resistor = () => {
   const handleResistor = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/register", {
-        userName: values.username,
-        email: values.email,
-        password: values.password,
-      });
+      const res = await axios.post(
+        "https://twitter-clone-apis.herokuapp.com/api/register",
+        {
+          userName: values.username,
+          email: values.email,
+          password: values.password,
+        }
+      );
       setResistorMessage(res.data.message);
       setTimeout(() => {
         setResistorMessage("");

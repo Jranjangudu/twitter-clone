@@ -1,14 +1,19 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const PORT = process.env.POST || 5000;
-const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 5000;
+
 const mongoose = require("mongoose");
 //Bodyparser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 // cors middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  })
+);
 const Routes = require("./routes/routes");
 
 const db = require("./config/keys");
