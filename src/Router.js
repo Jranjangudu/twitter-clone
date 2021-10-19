@@ -24,7 +24,7 @@ const Router = () => {
   useEffect(() => {
     const fetchToken = () => {
       if (IsLoggedin) {
-        fetch("http://localhost:5000/api/verifyuser", {
+        fetch("https://twitter-clone-apis.herokuapp.com/api/verifyuser", {
           headers: {
             authorization: `bearer ${IsLoggedin}`,
           },
