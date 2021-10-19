@@ -10,7 +10,7 @@ app.use(express.json());
 // cors middleware
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://twitter-clone-93328.web.app",
     methods: ["GET", "POST"],
   })
 );
