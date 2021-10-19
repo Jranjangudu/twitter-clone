@@ -26,7 +26,7 @@
 }
 .delete__account:hover::after {
   content: "Remove Account";
-  padding: 8px;
+  padding: 4px 8px;
   height: 30px;
   position: absolute;
   top: 40px;

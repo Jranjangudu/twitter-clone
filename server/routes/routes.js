@@ -5,6 +5,26 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/users");
 const keys = require("../config/keys");
+//VERIFYING THE BEARER TOKEN FOR AUTHRIZATION
+function verifyToken(req, res, next) {
+  const bearerHeader = req.headers["authorization"];
+  if (typeof bearerHeader !== "undefined") {
+    const token = bearerHeader.split(" ");
+    req.token = token[1];
+    next();
+  } else {
+    res.sendStatus(403);
+  }
+}
+router.get("/verifyuser", verifyToken, (req, res) => {
+  jwt.verify(req.token, keys.jwtSecretKey, (err, authData) => {
+    if (err) {
+      return res.send(false);
+    } else {
+      return res.send(true);
+    }
+  });
+});
 // ----------------- AUTHENTICAITON --------------------------------------------------------
 //CREATE A NEW USER " URL :{endpoint}/api/register "
 /*
@@ -101,7 +121,7 @@ router.post("/login", async (req, res) => {
           }
 
           return res.status(401).json({
-            message: "Auth Failed!",
+            message: "login  Failed!",
           });
         });
       }

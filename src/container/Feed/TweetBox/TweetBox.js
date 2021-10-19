@@ -48,7 +48,7 @@ const TweetBox = () => {
           type="URL"
         />
 
-        <button className="tweet__btn" disable={!tweetMessage} type="submit">
+        <button className="tweet__btn"  type="submit">
           Tweet
         </button>
       </form>

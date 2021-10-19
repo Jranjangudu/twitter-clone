@@ -2,6 +2,8 @@ import React from "react";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import "./profile.css";
+// const path = require('path')
+// path.normalize('/users/joe/..//test.txt') //'/users/test.txt
 const Profile = () => {
   const UserData = JSON.parse(localStorage.getItem("userdata"));
   return (

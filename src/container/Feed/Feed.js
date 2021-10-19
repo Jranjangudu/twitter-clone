@@ -3,9 +3,10 @@ import Post from "../../components/Posts/Post";
 import db from "../../firebase";
 import css from "./Feed.module.css";
 import TweetBox from "./TweetBox/TweetBox";
+import { useHistory } from "react-router-dom";
 const Feed = () => {
   const [posts, setPosts] = useState([]);
-
+  const history = useHistory();
   useEffect(() => {
     db.collection("posts").onSnapshot((snapshot) => {
       setPosts(snapshot.docs.map((doc) => doc.data()));
@@ -13,6 +14,7 @@ const Feed = () => {
   }, []);
   const handleLogout = () => {
     localStorage.removeItem("auth");
+    history.push("/login");
     window.location.reload();
   };
   return (

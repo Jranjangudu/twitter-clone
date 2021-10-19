@@ -3,7 +3,6 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { Link, useHistory } from "react-router-dom";
 import css from "./lnput.module.css";
 import InputField from "../components/form/InputField";
-
 import axios from "axios";
 const Login = () => {
   const history = useHistory();
@@ -50,51 +49,55 @@ const Login = () => {
         timestamp: res.data.timestamp,
       };
       localStorage.setItem("userdata", JSON.stringify(storeData));
-      history.push("/");
+
+      history.push("/home");
       window.location.reload();
     } catch (error) {
-      error.response.data.message &&
+      console.log(error);
+      error.response?.data?.message &&
         setErrorMessage(error.response.data.message);
       setTimeout(() => {
         setErrorMessage("");
-      }, 2000);
+      }, 4000);
     }
   };
 
   return (
-    <div className={css.login__container}>
-      <div className={css.login__wrapper}>
-        <TwitterIcon className={css.twitter_logo} />
-        {ErrorMessage && <p className={css.error__message}>{ErrorMessage}</p>}
-        <h2 className={css.login_heading}>Happening now</h2>
-        <h4>Sign in to Twitter</h4>
-        <div className={css.form__wrapper}>
-          <form onSubmit={handleLogin}>
-            {loginField.map((eachField, idx) => {
-              return (
-                <>
-                  <InputField
-                    eachField={eachField}
-                    keys={idx}
-                    handlechange={handlechange}
-                    emailValue={values.email}
-                    passwordValue={values.password}
-                  />
-                </>
-              );
-            })}
+    <>
+      <div className={css.login__container}>
+        <div className={css.login__wrapper}>
+          <TwitterIcon className={css.twitter_logo} />
+          {ErrorMessage && <p className={css.error__message}>{ErrorMessage}</p>}
+          <h2 className={css.login_heading}>Happening now</h2>
+          <h4>Sign in to Twitter</h4>
+          <div className={css.form__wrapper}>
+            <form onSubmit={handleLogin}>
+              {loginField.map((eachField, idx) => {
+                return (
+                  <>
+                    <InputField
+                      eachField={eachField}
+                      keys={idx}
+                      handlechange={handlechange}
+                      emailValue={values.email}
+                      passwordValue={values.password}
+                    />
+                  </>
+                );
+              })}
 
-            <button className={css.login__button}>Login</button>
-            <p>
-              Don't have an account?{" "}
-              <Link to="signup" className={css.signup__link}>
-                Sign up
-              </Link>
-            </p>
-          </form>
+              <button className={css.login__button}>Login</button>
+              <p>
+                Don't have an account?{" "}
+                <Link to="/signup" className={css.signup__link}>
+                  Sign up
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

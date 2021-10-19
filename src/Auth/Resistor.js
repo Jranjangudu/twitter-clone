@@ -102,7 +102,7 @@ const Resistor = () => {
             <button className={css.login__button}>Resistor</button>
             <p>
               Already have an account?{" "}
-              <Link to="login" className={css.signup__link}>
+              <Link to="/login" className={css.signup__link}>
                 Login
               </Link>
             </p>
