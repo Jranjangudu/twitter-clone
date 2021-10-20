@@ -5,17 +5,18 @@
 .feed__header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 9px;
   font-size: 20px;
   position: sticky;
   top: 0;
   color: black;
   z-index: 9;
-  background-color: #fff;
-  border-bottom: 1px solid rgb(233, 232, 232);
+  background-color: #111827;
+  border-bottom: 1px solid rgb(10, 8, 8);
 }
 .feet__container {
-  border-left: 1px solid rgb(233, 232, 232);
+  border-left: 1px solid black;
 }
 .logout {
   background-color: #3999da;
@@ -28,4 +29,20 @@
 .logout:hover {
   background-color: #3794d3;
   cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .menu {
+    display: inline-block;
+    margin-left: -10px;
+  }
+  .feet__container {
+    margin-left: 30px;
+  }
+}
+@media (max-width: 420px) {
+  .feed__header {
+    padding: 2px;
+    font-size: 10px;
+  }
 }

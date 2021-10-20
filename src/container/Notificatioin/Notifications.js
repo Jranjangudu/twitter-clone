@@ -4,7 +4,6 @@ const Notifications = () => {
   return (
     <div className="notif_header">
       <h1>Notifications</h1>
-
       <div className="notification_header">
         <h2>
           Nothing to see here <br /> — yet

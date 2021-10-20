@@ -47,8 +47,7 @@ const TweetBox = () => {
           className="tweetImage"
           type="URL"
         />
-
-        <button className="tweet__btn"  type="submit">
+        <button className="tweet__btn" type="submit">
           Tweet
         </button>
       </form>

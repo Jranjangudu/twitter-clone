@@ -32,3 +32,23 @@
 .active {
   color: red;
 }
+.twitter_logo {
+  font-size: 40px !important;
+}
+@media (max-width: 730px) {
+  .tweet__btn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 700px) {
+  .tweet__btn {
+    display: none;
+  }
+}
+@media (max-width: 440px) {
+  .twitter_logo {
+    font-size: 25px !important;
+    margin-top: 20px;
+  }
+}

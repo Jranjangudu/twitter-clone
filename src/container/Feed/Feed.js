@@ -4,6 +4,7 @@ import db from "../../firebase";
 import css from "./Feed.module.css";
 import TweetBox from "./TweetBox/TweetBox";
 import { useHistory } from "react-router-dom";
+
 const Feed = () => {
   const [posts, setPosts] = useState([]);
   const history = useHistory();
@@ -17,10 +18,11 @@ const Feed = () => {
     history.push("/login");
     window.location.reload();
   };
+
   return (
     <div className={css.feet__container}>
       <div className={css.feed__header}>
-        <h2 className={css.home}>Home</h2>
+        <h2 className={css.home}> Home</h2>
         <h2 className={css.logout} onClick={handleLogout}>
           Logout
         </h2>

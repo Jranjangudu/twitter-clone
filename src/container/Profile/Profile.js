@@ -19,7 +19,6 @@ const Profile = () => {
             src={`https://ui-avatars.com/api/?color=ff0000&name=${UserData.userName}`}
             alt="logo"
           />
-
           <div className="delete__account">
             <DeleteOutlineIcon />
           </div>

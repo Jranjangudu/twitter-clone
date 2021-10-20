@@ -1,6 +1,6 @@
 {
-    "short_name": "twitter clone",
-    "name": "twitter clone PWA",
+    "short_name": "TWITTER CLONE",
+    "name": "TWITTER CLONE PWA",
     "icons": [
         {
             "src": "/images/icon128.png",
@@ -15,6 +15,7 @@
     ],
     "start_url": "./",
     "display": "standalone",
+    "description": "A Awesome Modern PWA twitter clone Application",
     "theme_color": "#000000",
     "background_color": "#ffffff"
 }

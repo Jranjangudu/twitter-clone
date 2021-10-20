@@ -8,7 +8,7 @@
 
 .sidebar__options > .MuiSvgIcon-root {
   margin: 15px;
-  color: #504f4f;
+  color: #fff;
 }
 .sidebar__options > h2 {
   font-weight: 400;
@@ -17,7 +17,34 @@
   color: #2a2929;
 }
 .sidebar__options:hover {
-  background-color: #e7e7e8;
-
   color: #1d9bf0;
+  background-color: black;
+}
+@media (max-width: 900px) {
+  .sidebar__options > h2 {
+    font-size: 16px;
+    padding: 0 8px;
+    color: #2a2929;
+  }
+}
+@media (max-width: 790px) {
+  .sidebar__options > .MuiSvgIcon-root {
+    margin: 10px;
+  }
+  .sidebar__options > h2 {
+    margin-left: -5px !important;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar__options > h2 {
+    display: none;
+  }
+  .sidebar__options > .MuiSvgIcon-root {
+    margin-left: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .sidebar__options > .MuiSvgIcon-root {
+    margin: 14px !important;
+  }
 }

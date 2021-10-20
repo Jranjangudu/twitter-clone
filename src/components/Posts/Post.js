@@ -8,6 +8,7 @@ import PublishOutlinedIcon from "@material-ui/icons/PublishOutlined";
 import IconButton from "@material-ui/core/IconButton";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import "./Post.css";
+
 const Post = ({ displayName, userName, text, image, avatar, verified }) => {
   return (
     <div className="post__wrapper">
@@ -24,19 +25,16 @@ const Post = ({ displayName, userName, text, image, avatar, verified }) => {
                   <VerifiedUserIcon className="post__verifiedbadge" />
                 </span>
               )}
-
               <span className="post__username">@{userName}</span>
-
               <MoreHorizIcon className="post__deleteIcon" />
-            </h3>{" "}
-          </div>{" "}
+            </h3>
+          </div>
         </div>
 
         <div className="post__description">{text}</div>
         {image && <img src={image} alt="posts" className="post__image" />}
         <div className="post__footer">
           <IconButton>
-            {" "}
             <ChatBubbleOutlineOutlinedIcon fontSize="small" />
           </IconButton>
           <IconButton>

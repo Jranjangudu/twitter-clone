@@ -1,5 +1,5 @@
 .tweet__box {
-  border-bottom: 1px solid rgb(221, 219, 219);
+  border-bottom: 1px solid black;
   border-radius: 5px;
   padding: 20px;
 }
@@ -18,16 +18,22 @@
   border: none;
   padding: 10px 15px;
   outline: none;
-  font-size: 20px;
+  font-size: 16px;
+  background-color: black;
+  border-radius: 20px;
+  color: #fff;
 }
 .tweetImage {
   flex: 1;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 14px;
   border: none;
   padding: 10px 15px;
   outline: none;
-  font-size: 16px;
+  font-size: 15px;
+  background-color: black;
+  border-radius: 20px;
+  color: #fff;
 }
 .tweet__btn {
   width: fit-content;
@@ -39,4 +45,26 @@
   border-radius: 15px;
   margin-left: auto;
   cursor: pointer;
+  margin-top: 10px;
+}
+@media (max-width: 480px) {
+  .tweet__box {
+    margin-left: 10px;
+  }
+  .tweetMessage,
+  .tweetImage {
+    flex: 1;
+    margin-left: 7px;
+    margin-right: 8px;
+    padding: 8px 8px;
+    font-size: 12px;
+  }
+  .tweetImage {
+    flex: 0.7;
+  }
+  .tweet__btn {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 18px;
+  }
 }
