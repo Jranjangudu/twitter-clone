@@ -4,7 +4,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 5000;
 
 const mongoose = require("mongoose");
-//Bodyparser middleware
+// middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // cors middleware
